@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bostrap.css">
+
+  <link rel="stylesheet" href="foter.css">
+  <title>Menú Hamburguesa Crema</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+   
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#"> ICO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#horario">Horarios</a>
+        
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nuetra institucion">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 text-center">
+    <h1>BIENVENIDOS A ICO 
+      INTITUTO DE COMPUINGLES DE ORIENTE
+    </h1>
+    <p>En reconocimiento a completar exitosamente los requerimientos para convertirce en un IQcenter Certiport Autorizado</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+ <div class="slider">
+    <!-- Visión -->
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1400&q=80');">
+      <div class="slide-content">
+        <h2>Visión</h2>
+        <p>Ser una institución educativa reconocida por formar estudiantes felices, críticos y responsables, listos para transformar el mundo desde el kínder hasta la secundaria.</p>
+      </div>
+    </div>
+
+    <!-- Misión -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1400&q=80');">
+      <div class="slide-content">
+        <h2>Misión</h2>
+        <p>Brindar una educación integral y humanista que estimule la creatividad, el respeto y el amor por el aprendizaje en cada etapa escolar.</p>
+      </div>
+    </div>
+
+    <!-- Valores -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519455953755-af066f52f1ea?auto=format&fit=crop&w=1400&q=80');">
+      <div class="slide-content">
+        <h2>Valores</h2>
+        <p>Fomentamos la empatía, la responsabilidad, la cooperación y la honestidad como pilares fundamentales en la formación de nuestros estudiantes.</p>
+      </div>
+    </div>
+
+    <!-- Botones manuales -->
+    <button class="nav-btn prev">&#10094;</button>
+    <button class="nav-btn next">&#10095;</button>
+
+    <!-- Puntos -->
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+    let interval = setInterval(autoSlide, 5000); // Cambia cada 5 segundos
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+    }
+
+    function autoSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+      resetInterval();
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+      resetInterval();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        showSlide(index);
+        resetInterval();
+      });
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 5000);
+    }
+  </script>
+
+
+  <h1>Cinta de Imágenes de Nuestra Escuela</h1>
+
+  <div class="cinta-container" id="cinta">
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80" alt="Kinder"></div>
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Primaria"></div>
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt="Secundaria"></div>
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Biblioteca"></div>
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80" alt="Actividades"></div>
+    <div class="imagen"><img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80" alt="Aula de clases"></div>
+  </div>
+
+  <button class="btn btn-left" id="btnIzquierda">&#10094;</button>
+  <button class="btn btn-right" id="btnDerecha">&#10095;</button>
+
+  <script>
+    const cinta = document.getElementById('cinta');
+    const btnIzquierda = document.getElementById('btnIzquierda');
+    const btnDerecha = document.getElementById('btnDerecha');
+
+    // Desplazar manualmente con botones
+    btnIzquierda.addEventListener('click', () => {
+      cinta.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    btnDerecha.addEventListener('click', () => {
+      cinta.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // Desplazamiento automático
+    let autoScroll = setInterval(() => {
+      if (cinta.scrollLeft + cinta.clientWidth >= cinta.scrollWidth) {
+        cinta.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        cinta.scrollBy({ left: 300, behavior: 'smooth' });
+      }
+    }, 4000); // cada 4 segundos
+
+    // Detiene el auto scroll cuando el usuario pasa el mouse encima
+    cinta.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    cinta.addEventListener('mouseleave', () => {
+      autoScroll = setInterval(() => {
+        if (cinta.scrollLeft + cinta.clientWidth >= cinta.scrollWidth) {
+          cinta.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          cinta.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }, 4000);
+    });
+  </script>
+
+  <!-- 🎨 GALERÍA EN MOSAICO -->
+<section class="galeria">
+  <h2>📸 Galería Escolar</h2>
+  <p>Explora momentos especiales de nuestros niveles educativos.</p>
+
+  <div class="filtros">
+    <button onclick="filtrarImagenes('todas')">Todas</button>
+    <button onclick="filtrarImagenes('kinder')">Kínder</button>
+    <button onclick="filtrarImagenes('primaria')">Primaria</button>
+    <button onclick="filtrarImagenes('secundaria')">Secundaria</button>
+  </div>
+
+  <div class="mosaico">
+    <!-- KINDER -->
+    <div class="img-card kinder"><img src="https://adn.mx/wp-content/uploads/2023/05/47414-kinder-1-2193110223-1591359994763.jpg" alt="Kínder 1"></div>
+    <div class="img-card kinder"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=600&q=80" alt="Kínder 2"></div>
+
+    <!-- PRIMARIA -->
+    <div class="img-card primaria"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=600&q=80" alt="Primaria 1"></div>
+    <div class="img-card primaria"><img src="https://www.nwl.com.mx/docs/images/niveles/maternal-kinder-primaria-secundaria-NWL-corregidora.png" alt="Primaria 2"></div>
+
+    <!-- SECUNDARIA -->
+    <div class="img-card secundaria"><img src="https://edutory.mx/wp-content/uploads/2023/05/instituto-ciudad-cumbres-kinder-privado-768x576.jpeg" alt="Secundaria 1"></div>
+    <div class="img-card secundaria"><img src="https://adn.mx/wp-content/uploads/2023/05/47414-kinder-1-2193110223-1591359994763.jpg" alt="Secundaria 2"></div>
+
+    <!-- MIX -->
+    <div class="img-card primaria"><img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80" alt="Primaria 3"></div>
+    <div class="img-card kinder"><img src="https://tvazteca.brightspotcdn.com/dims4/default/d85aad1/2147483647/strip/true/crop/1280x720+0+0/resize/928x522!/format/webp/quality/70/?url=http%3A%2F%2Ftv-azteca-brightspot.s3.amazonaws.com%2F3e%2Fdc%2F13cb6a03492f87ca5f34bec4a901%2Fresultados-said-2025-edomex-consulta-ya-la-asignacion-de-escuelas-para-preescolar-primaria-y-secun.jpg" alt="Kínder 3"></div>
+    <div class="img-card secundaria"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlhCP-znR4TiGv5wG-_ry1wsOyITmBdhdWzA&s" alt="Secundaria 3"></div>
+  </div>
+</section>
+
+<!-- 🏫 SECCIÓN SOBRE NUESTRA INSTITUCIÓN -->
+<section id="nuetra institucion">
+  <h2>🏫 Nuestra Institución</h2>
+  <p class="intro">
+    Somos una comunidad educativa comprometida con la formación integral de nuestros estudiantes en los niveles de Kínder, Primaria y Secundaria. 
+    Fomentamos el respeto, la creatividad y la excelencia académica.
+  </p>
+
+  <div class="niveles">
+    <div class="card" onclick="mostrarInfo(this)">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80" alt="Kinder">
+      <h3>Kínder</h3>
+      <p>Desarrollamos habilidades sociales, motrices y emocionales a través del juego y la exploración.</p>
+      <div class="mas-info">
+        <p>Nuestros pequeños descubren el mundo en un ambiente seguro, colorido y lleno de aprendizaje. Promovemos la curiosidad y la imaginación.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="mostrarInfo(this)">
+      <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80" alt="Primaria">
+      <h3>Primaria</h3>
+      <p>Fortalecemos la responsabilidad, la creatividad y el amor por el conocimiento.</p>
+      <div class="mas-info">
+        <p>Impulsamos la lectura, las matemáticas, la ciencia y el arte con métodos innovadores y maestros apasionados por enseñar.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="mostrarInfo(this)">
+      <img src="https://images.unsplash.com/photo-1600195077172-2c5a59a6a0fa?auto=format&fit=crop&w=800&q=80" alt="Secundaria">
+      <h3>Secundaria</h3>
+      <p>Preparamos a los estudiantes para los retos académicos y personales del futuro.</p>
+      <div class="mas-info">
+        <p>Promovemos el pensamiento crítico, la autonomía y el liderazgo, acompañando su desarrollo en una etapa clave de la vida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <header id="horario">🕒 Horarios Escolares</header>
+
+  <div class="container">
+
+    <div class="nivel">
+      <button onclick="toggleHorario('kinder')">Kínder</button>
+      <div id="kinder" class="horario">
+        <table>
+          <tr><th>Día</th><th>Horario</th><th>Actividad Principal</th></tr>
+          <tr><td>Lunes</td><td>8:00 - 12:00</td><td>Juegos Didácticos</td></tr>
+          <tr><td>Martes</td><td>8:00 - 12:00</td><td>Arte y Música</td></tr>
+          <tr><td>Miércoles</td><td>8:00 - 12:00</td><td>Lectura de Cuentos</td></tr>
+          <tr><td>Jueves</td><td>8:00 - 12:00</td><td>Psicomotricidad</td></tr>
+          <tr><td>Viernes</td><td>8:00 - 12:00</td><td>Manualidades</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="nivel">
+      <button onclick="toggleHorario('primaria')">Primaria</button>
+      <div id="primaria" class="horario">
+        <table>
+          <tr><th>Día</th><th>Horario</th><th>Materias</th></tr>
+          <tr><td>Lunes</td><td>8:00 - 13:30</td><td>Matemáticas / Español</td></tr>
+          <tr><td>Martes</td><td>8:00 - 13:30</td><td>Ciencias / Inglés</td></tr>
+          <tr><td>Miércoles</td><td>8:00 - 13:30</td><td>Historia / Arte</td></tr>
+          <tr><td>Jueves</td><td>8:00 - 13:30</td><td>Educación Física</td></tr>
+          <tr><td>Viernes</td><td>8:00 - 13:30</td><td>Computación / Música</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="nivel">
+      <button onclick="toggleHorario('secundaria')">Secundaria</button>
+      <div id="secundaria" class="horario">
+        <table>
+          <tr><th>Día</th><th>Horario</th><th>Materias</th></tr>
+          <tr><td>Lunes</td><td>7:30 - 14:00</td><td>Matemáticas / Física</td></tr>
+          <tr><td>Martes</td><td>7:30 - 14:00</td><td>Inglés / Biología</td></tr>
+          <tr><td>Miércoles</td><td>7:30 - 14:00</td><td>Historia / Tecnología</td></tr>
+          <tr><td>Jueves</td><td>7:30 - 14:00</td><td>Español / Química</td></tr>
+          <tr><td>Viernes</td><td>7:30 - 14:00</td><td>Arte / Educación Física</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleHorario(id) {
+      const horario = document.getElementById(id);
+      const visible = horario.style.display === "block";
+      // Oculta todos los demás
+      document.querySelectorAll('.horario').forEach(h => h.style.display = "none");
+      // Alterna el actual
+      horario.style.display = visible ? "none" : "block";
+    }
+  </script>
+
+
+<!-- 🦶 PIE DE PÁGINA -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>🏫 Escuela Futuro Brillante</h2>
+      <p>Formando generaciones con valores y conocimiento.</p>
+    </div>
+
+    <div class="footer-social">
+      <h3>Síguenos</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/5210000000000" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <h3>Contacto</h3>
+      <p>📍 Dirección: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d562.5727356743704!2d-97.39122764599072!3d18.459946636388075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c5bcd9b76956f5%3A0x48ea9ba27a979d10!2sInstituto%20de%20Compuingles%20de%20Oriente!5e0!3m2!1ses-419!2smx!4v1762107197133!5m2!1ses-419!2smx" width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+      <p>📞 Teléfono: (555) 123-4567</p>
+      <p>📧 Correo: contacto@futurobrillante.edu.mx</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Escuela Futuro Brillante. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ICONOS DE FONT AWESOME -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+  // Mostrar el año actual automáticamente
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
